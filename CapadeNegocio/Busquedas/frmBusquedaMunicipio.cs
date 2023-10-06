@@ -15,14 +15,20 @@ namespace CapadeNegocio.Busquedas
     {
         static CapadeNegocio.Clases.Conexion x = new CapadeNegocio.Clases.Conexion();
         SqlConnection con = new SqlConnection();
+        string sConexion;
         public frmBusquedaMunicipio()
         {
             InitializeComponent();
             con.ConnectionString = x.con();
         }
+        public frmBusquedaMunicipio(string sConexion)
+        {
+            InitializeComponent();
+            this.sConexion = sConexion;
+        }
         void cargardg()
         {
-            string query = "select * from vMunicipios where Nombre LIKE '%" + txtFiltro + "%'";
+            string query = "select * from vMunicipios where Nombre LIKE '%" + txtFiltro.Text + "%'";
             DataTable dt = new DataTable();
             con.Open();
             SqlDataAdapter da = new SqlDataAdapter(query, con);

@@ -23,7 +23,12 @@ namespace CapadeUsuario.Catalogos
             InitializeComponent();
             cargarestados();
         }
-
+        public frmMunicipio(string sConexion)
+        {
+            InitializeComponent();
+            this.sConexion = sConexion;
+            cargarestados();
+        }
         private void frmMunicipio_Load(object sender, EventArgs e)
         {
 
