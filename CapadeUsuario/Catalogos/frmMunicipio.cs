@@ -45,8 +45,12 @@ namespace CapadeUsuario.Catalogos
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            CapadeNegocio.Clases.Municipio x = new CapadeNegocio.Clases.Municipio();
+            CapadeNegocio.Clases.Municipio x = new CapadeNegocio.Clases.Municipio(sConexion);
             x.buscar();
+            txtID.Text = x.id.ToString();
+            txtNombre.Text = x.nombre;
+            cbEstado.SelectedValue = x.idEstado;
         }
     }
 }
+

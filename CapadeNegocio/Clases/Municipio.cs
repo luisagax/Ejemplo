@@ -113,7 +113,7 @@ namespace CapadeNegocio.Clases
         }
         public void buscar()
         {
-            Busquedas.frmBusquedaMunicipio x = new Busquedas.frmBusquedaMunicipio();
+            Busquedas.frmBusquedaMunicipio x = new Busquedas.frmBusquedaMunicipio(sConexion);
             x.ShowDialog();
             if(x.DialogResult == System.Windows.Forms.DialogResult.OK)
             {

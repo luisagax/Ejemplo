@@ -17,7 +17,7 @@ namespace CapadeUsuario
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMunicipio());
+            Application.Run(new frmMenu());
         }
     }
 }

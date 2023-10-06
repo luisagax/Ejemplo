@@ -27,7 +27,7 @@ namespace CapadeUsuario
 
         private void municipioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Catalogos.frmMunicipio x = new Catalogos.frmMunicipio();
+            Catalogos.frmMunicipio x = new Catalogos.frmMunicipio(sConexion);
             x.Show();
         }
     }

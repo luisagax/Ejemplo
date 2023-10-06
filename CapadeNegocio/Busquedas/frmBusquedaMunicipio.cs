@@ -25,6 +25,7 @@ namespace CapadeNegocio.Busquedas
         {
             InitializeComponent();
             this.sConexion = sConexion;
+            con.ConnectionString = sConexion;
         }
         void cargardg()
         {
