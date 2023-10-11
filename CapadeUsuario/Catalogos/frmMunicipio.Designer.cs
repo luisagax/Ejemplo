@@ -62,6 +62,7 @@
             // 
             // txtID
             // 
+            this.txtID.Enabled = false;
             this.txtID.Location = new System.Drawing.Point(120, 46);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(100, 26);
@@ -111,6 +112,7 @@
             this.tsGuardar.Tag = "Guardar";
             this.tsGuardar.Text = "Guardar";
             this.tsGuardar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.tsGuardar.Click += new System.EventHandler(this.tsGuardar_Click);
             // 
             // tsEliminar
             // 
@@ -120,6 +122,7 @@
             this.tsEliminar.Name = "tsEliminar";
             this.tsEliminar.Size = new System.Drawing.Size(28, 28);
             this.tsEliminar.Text = "toolStripButton2";
+            this.tsEliminar.Click += new System.EventHandler(this.tsEliminar_Click);
             // 
             // label3
             // 

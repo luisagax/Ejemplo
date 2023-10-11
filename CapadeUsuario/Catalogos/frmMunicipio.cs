@@ -31,7 +31,8 @@ namespace CapadeUsuario.Catalogos
         }
         private void frmMunicipio_Load(object sender, EventArgs e)
         {
-
+            txtID.Text = "0";
+            txtID.Enabled = false;
         }
         void cargarestados()
         {
@@ -50,6 +51,22 @@ namespace CapadeUsuario.Catalogos
             txtID.Text = x.id.ToString();
             txtNombre.Text = x.nombre;
             cbEstado.SelectedValue = x.idEstado;
+        }
+
+        private void tsGuardar_Click(object sender, EventArgs e)
+        {
+            CapadeNegocio.Clases.Municipio x = new CapadeNegocio.Clases.Municipio(sConexion);
+            x.id = int.Parse(txtID.Text);
+            x.nombre = txtNombre.Text;
+            x.idEstado = int.Parse(cbEstado.SelectedValue.ToString());
+            MessageBox.Show(x.guardar());
+        }
+
+        private void tsEliminar_Click(object sender, EventArgs e)
+        {
+            CapadeNegocio.Clases.Municipio x = new CapadeNegocio.Clases.Municipio(sConexion);
+            x.id = int.Parse(txtID.Text);
+            MessageBox.Show(x.eliminar());
         }
     }
 }

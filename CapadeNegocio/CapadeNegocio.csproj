@@ -61,6 +61,7 @@
     <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Clases\Estados.cs" />
     <Compile Include="Clases\Municipio.cs" />
+    <Compile Include="Clases\Ventas.cs" />
     <Compile Include="dsBusquedaEstados.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
