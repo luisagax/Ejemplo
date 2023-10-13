@@ -64,6 +64,7 @@ namespace CapadeNegocio.Clases
             }
             return msj;
         }
+        //Prueba cambios
         public void buscar()
         {
             Busquedas.frmBusquedaClientes x = new Busquedas.frmBusquedaClientes(sConexion);
