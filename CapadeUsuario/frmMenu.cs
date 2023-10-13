@@ -30,5 +30,11 @@ namespace CapadeUsuario
             Catalogos.frmMunicipio x = new Catalogos.frmMunicipio(sConexion);
             x.Show();
         }
+
+        private void tsVentas_Click(object sender, EventArgs e)
+        {
+            Catalogos.frmVentas x = new Catalogos.frmVentas(sConexion);
+            x.Show();
+        }
     }
 }

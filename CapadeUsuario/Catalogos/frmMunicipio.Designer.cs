@@ -46,7 +46,7 @@
             // 
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.Location = new System.Drawing.Point(226, 41);
+            this.btnBuscar.Location = new System.Drawing.Point(226, 42);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(44, 35);
             this.btnBuscar.TabIndex = 11;
@@ -96,6 +96,7 @@
             this.tsEliminar});
             this.barrademenu.Location = new System.Drawing.Point(0, 0);
             this.barrademenu.Name = "barrademenu";
+            this.barrademenu.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.barrademenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.barrademenu.Size = new System.Drawing.Size(502, 31);
             this.barrademenu.Stretch = true;
@@ -155,7 +156,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.barrademenu);
             this.Font = new System.Drawing.Font("Georgia", 12F);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmMunicipio";
             this.Text = "Municipio";
             this.Load += new System.EventHandler(this.frmMunicipio_Load);

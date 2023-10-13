@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Busquedas\frmBusquedaClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busquedas\frmBusquedaClientes.Designer.cs">
+      <DependentUpon>frmBusquedaClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Busquedas\frmBusquedaEstados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +64,7 @@
     <Compile Include="Busquedas\frmBusquedaMunicipio.Designer.cs">
       <DependentUpon>frmBusquedaMunicipio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clases\Clientes.cs" />
     <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Clases\Estados.cs" />
     <Compile Include="Clases\Municipio.cs" />
@@ -75,6 +82,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Busquedas\frmBusquedaClientes.resx">
+      <DependentUpon>frmBusquedaClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Busquedas\frmBusquedaEstados.resx">
       <DependentUpon>frmBusquedaEstados.cs</DependentUpon>
     </EmbeddedResource>

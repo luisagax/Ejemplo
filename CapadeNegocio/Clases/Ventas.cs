@@ -50,11 +50,11 @@ namespace CapadeNegocio.Clases
             {
                 con.Open();
                 comando.ExecuteNonQuery();
-                msj = "Proceso exitoso, Estado guardado/actualizado correctamente";
+                msj = "Venta exitosa";
             }
             catch (Exception e)
             {
-                msj = "Proceso fallido, error al guardar/actualizar el Estado";
+                msj = "Errores en ventas";
             }
             finally
             {

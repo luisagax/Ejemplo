@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.catalogosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.direccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -36,7 +37,9 @@
             this.movimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsVentas = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -66,20 +69,20 @@
             this.estadoToolStripMenuItem,
             this.municipioToolStripMenuItem});
             this.direccionesToolStripMenuItem.Name = "direccionesToolStripMenuItem";
-            this.direccionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.direccionesToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.direccionesToolStripMenuItem.Text = "Direcciones";
             // 
             // estadoToolStripMenuItem
             // 
             this.estadoToolStripMenuItem.Name = "estadoToolStripMenuItem";
-            this.estadoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.estadoToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.estadoToolStripMenuItem.Text = "Estado";
             this.estadoToolStripMenuItem.Click += new System.EventHandler(this.estadoToolStripMenuItem_Click);
             // 
             // municipioToolStripMenuItem
             // 
             this.municipioToolStripMenuItem.Name = "municipioToolStripMenuItem";
-            this.municipioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.municipioToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.municipioToolStripMenuItem.Text = "Municipio";
             this.municipioToolStripMenuItem.Click += new System.EventHandler(this.municipioToolStripMenuItem_Click);
             // 
@@ -98,11 +101,23 @@
             // toolStrip1
             // 
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsVentas});
             this.toolStrip1.Location = new System.Drawing.Point(0, 26);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(26, 224);
+            this.toolStrip1.Size = new System.Drawing.Size(32, 224);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tsVentas
+            // 
+            this.tsVentas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsVentas.Image = ((System.Drawing.Image)(resources.GetObject("tsVentas.Image")));
+            this.tsVentas.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsVentas.Name = "tsVentas";
+            this.tsVentas.Size = new System.Drawing.Size(29, 20);
+            this.tsVentas.Text = "toolStripButton1";
+            this.tsVentas.Click += new System.EventHandler(this.tsVentas_Click);
             // 
             // frmMenu
             // 
@@ -119,6 +134,8 @@
             this.Text = "frmMenu";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,5 +151,6 @@
         private System.Windows.Forms.ToolStripMenuItem movimientoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informesToolStripMenuItem;
         private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton tsVentas;
     }
 }
