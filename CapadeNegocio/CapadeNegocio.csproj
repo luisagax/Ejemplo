@@ -64,10 +64,17 @@
     <Compile Include="Busquedas\frmBusquedaMunicipio.Designer.cs">
       <DependentUpon>frmBusquedaMunicipio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Busquedas\frmBusquedaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busquedas\frmBusquedaProducto.Designer.cs">
+      <DependentUpon>frmBusquedaProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clases\Clientes.cs" />
     <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Clases\Estados.cs" />
     <Compile Include="Clases\Municipio.cs" />
+    <Compile Include="Clases\Productos.cs" />
     <Compile Include="Clases\Ventas.cs" />
     <Compile Include="dsBusquedaEstados.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -90,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Busquedas\frmBusquedaMunicipio.resx">
       <DependentUpon>frmBusquedaMunicipio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Busquedas\frmBusquedaProducto.resx">
+      <DependentUpon>frmBusquedaProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

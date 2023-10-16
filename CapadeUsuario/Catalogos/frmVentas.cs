@@ -29,5 +29,45 @@ namespace CapadeUsuario.Catalogos
             txtIdCliente.Text = x.id.ToString();
             txtNombreCliente.Text = x.nombre;
         }
+
+        private void btnBuscarProducto_Click(object sender, EventArgs e)
+        {
+            CapadeNegocio.Clases.Productos x = new CapadeNegocio.Clases.Productos(sConexion);
+            x.buscar();
+            txtIdProducto.Text = x.id.ToString();
+            txtNombreProducto.Text = x.nombre;
+            txtPrecio.Text = x.costo.ToString();
+        }
+        void bclientes()
+        {
+            CapadeNegocio.Clases.Clientes x = new CapadeNegocio.Clases.Clientes(sConexion);
+            x.id = int.Parse(txtIdCliente.Text);
+            x.obtener();
+            txtNombreCliente.Text = x.nombre;
+        }
+        void bproductos()
+        {
+            CapadeNegocio.Clases.Productos x = new CapadeNegocio.Clases.Productos(sConexion);
+            x.id = int.Parse(txtIdProducto.Text);
+            x.obtener();
+            txtNombreProducto.Text = x.nombre;
+            txtPrecio.Text = x.costo.ToString();
+        }
+
+        private void txtIdProducto_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                bproductos();
+            }
+        }
+
+        private void txtIdCliente_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                bclientes();
+            }
+        }
     }
 }

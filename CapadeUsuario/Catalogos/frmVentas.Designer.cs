@@ -88,6 +88,7 @@
             this.txtIdCliente.Name = "txtIdCliente";
             this.txtIdCliente.Size = new System.Drawing.Size(118, 26);
             this.txtIdCliente.TabIndex = 3;
+            this.txtIdCliente.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtIdCliente_KeyDown);
             // 
             // txtNombreCliente
             // 
@@ -176,6 +177,7 @@
             this.btnBuscarProducto.Size = new System.Drawing.Size(44, 35);
             this.btnBuscarProducto.TabIndex = 18;
             this.btnBuscarProducto.UseVisualStyleBackColor = true;
+            this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProducto_Click);
             // 
             // txtNombreProducto
             // 
@@ -190,10 +192,11 @@
             this.txtIdProducto.Name = "txtIdProducto";
             this.txtIdProducto.Size = new System.Drawing.Size(118, 26);
             this.txtIdProducto.TabIndex = 16;
+            this.txtIdProducto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtIdProducto_KeyDown);
             // 
             // txtCantidad
             // 
-            this.txtCantidad.Location = new System.Drawing.Point(302, 379);
+            this.txtCantidad.Location = new System.Drawing.Point(304, 381);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(100, 26);
             this.txtCantidad.TabIndex = 20;
@@ -208,7 +211,7 @@
             // labelcantidad
             // 
             this.labelcantidad.AutoSize = true;
-            this.labelcantidad.Location = new System.Drawing.Point(316, 358);
+            this.labelcantidad.Location = new System.Drawing.Point(316, 360);
             this.labelcantidad.Name = "labelcantidad";
             this.labelcantidad.Size = new System.Drawing.Size(71, 18);
             this.labelcantidad.TabIndex = 22;
