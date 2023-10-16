@@ -1,7 +1,9 @@
-﻿using System;
+﻿using CapadeNegocio.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +14,10 @@ namespace CapadeUsuario.Catalogos
 {
     public partial class frmVentas : Form
     {
+        static Conexion c = new Conexion();
+        SqlConnection con = new SqlConnection(@"" + c.con());
+        SqlCommand comando = new SqlCommand();
+        SqlDataReader lector;
         string sConexion;
         public frmVentas()
         {
@@ -21,6 +27,17 @@ namespace CapadeUsuario.Catalogos
         {
             InitializeComponent();
             this.sConexion = sConexion;
+        }
+        void cargarconsecutivo()
+        {
+            SqlCommand comando = new SqlCommand("select isnull(max(Folio),0)+1 as maxid from Venta", con);
+            con.Open();
+            lector = comando.ExecuteReader();
+            if (lector.Read())
+            {
+                txtFolio.Text = lector["maxid"].ToString();
+            }
+            con.Close();
         }
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
@@ -68,6 +85,38 @@ namespace CapadeUsuario.Catalogos
             {
                 bclientes();
             }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            byte u;
+            string s = dsVentaDet.spVentaDet.Compute("MAX(id)", "").ToString();
+            if (s == "")
+                u = 0;
+            else
+                u = byte.Parse(s);
+            u++;
+            dsVentaDet.spVentaDetRow R;
+            R = dsVentaDet.spVentaDet.NewspVentaDetRow();
+            R.id = u;
+            R.idVenta = int.Parse(txtFolio.Text);
+            R.Precio = decimal.Parse(txtPrecio.Text);
+            R.Cantidad = int.Parse(txtCantidad.Text);
+            decimal total = (R.Precio * R.Cantidad);
+            R.Total = total;
+            R.idProducto = int.Parse(txtIdProducto.Text);
+            R.Nombre = txtNombreProducto.Text;
+            dsVentaDet.spVentaDet.AddspVentaDetRow(R);
+            CalculaTotal();
+        }
+        void CalculaTotal()
+        {
+            txtTotal.Text = dsVentaDet.spVentaDet.Compute("sum(Total)", "").ToString();
+        }
+
+        private void frmVentas_Load(object sender, EventArgs e)
+        {
+            cargarconsecutivo();
         }
     }
 }

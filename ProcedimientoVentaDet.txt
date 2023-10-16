@@ -1,0 +1,10 @@
+create procedure spVentaDet
+@id int
+as
+begin
+	declare @detalles dbo.VentaDetalle
+	insert into @detalles(id, idVenta, Precio, Cantidad, Total,idProducto, Nombre) select v.id, v.idVenta, v.Precio, v.Cantidad, (v.Cantidad * v.Precio),v.idProducto, p.Nombre from VentaDet v
+	  inner join Productos p on p.id = v.idProducto where v.idVenta = @id 
+	  order by v.idVenta
+	  select * from @detalles
+end

@@ -64,6 +64,11 @@
     <Compile Include="Catalogos\frmVentas.Designer.cs">
       <DependentUpon>frmVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="dsVentaDet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsVentaDet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +107,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="dsVentaDet.xsc">
+      <DependentUpon>dsVentaDet.xsd</DependentUpon>
+    </None>
+    <None Include="dsVentaDet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsVentaDet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsVentaDet.xss">
+      <DependentUpon>dsVentaDet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

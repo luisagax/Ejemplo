@@ -9,6 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapadeUsuario", "CapadeUsua
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapadePrueba", "CapadePrueba\CapadePrueba.csproj", "{224F3838-A48E-4D2D-AF11-4F97808C7E85}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{238F7686-6AAA-4EA8-863D-CA61D0F9EF15}"
+	ProjectSection(SolutionItems) = preProject
+		ProcedimientoVentaDet.txt = ProcedimientoVentaDet.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
