@@ -39,6 +39,19 @@ namespace CapadeUsuario.Catalogos
             }
             con.Close();
         }
+        int cargarconsecutivodet()
+        {
+            int iddet = 0;
+            SqlCommand comando = new SqlCommand("select isnull(max(id),0)+1 as maxid from VentaDet", con);
+            con.Open();
+            lector = comando.ExecuteReader();
+            if (lector.Read())
+            {
+                iddet = int.Parse(lector["maxid"].ToString());
+            }
+            con.Close();
+            return iddet;
+        }
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
             CapadeNegocio.Clases.Clientes x = new CapadeNegocio.Clases.Clientes(sConexion);
@@ -89,13 +102,15 @@ namespace CapadeUsuario.Catalogos
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            byte u;
+            int u;
             string s = dsVentaDet.spVentaDet.Compute("MAX(id)", "").ToString();
             if (s == "")
-                u = 0;
+                u = cargarconsecutivodet();
             else
-                u = byte.Parse(s);
-            u++;
+            {
+                u = int.Parse(s);
+                u++;
+            }
             dsVentaDet.spVentaDetRow R;
             R = dsVentaDet.spVentaDet.NewspVentaDetRow();
             R.id = u;
@@ -117,6 +132,17 @@ namespace CapadeUsuario.Catalogos
         private void frmVentas_Load(object sender, EventArgs e)
         {
             cargarconsecutivo();
+        }
+        private void tsGuardar_Click(object sender, EventArgs e)
+        {
+            CapadeNegocio.Clases.Ventas x = new Ventas(sConexion);
+            x.detalles = dsVentaDet.spVentaDet;
+            x.Folio = int.Parse(txtFolio.Text);
+            x.Fecha = dtpFecha.Value;
+            x.Estatus = 1;
+            x.idCliente = int.Parse(txtIdCliente.Text);
+            x.Importe = decimal.Parse(txtTotal.Text);
+            MessageBox.Show(x.guardar());
         }
     }
 }

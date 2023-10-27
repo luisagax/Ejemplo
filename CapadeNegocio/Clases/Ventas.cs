@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CapadeNegocio.Clases
 {
-    internal class Ventas
+    public class Ventas
     {
         static Conexion c = new Conexion();
         SqlConnection con = new SqlConnection(@"" + c.con());
