@@ -70,6 +70,12 @@
     <Compile Include="Busquedas\frmBusquedaProducto.Designer.cs">
       <DependentUpon>frmBusquedaProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Busquedas\frmBusquedaVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busquedas\frmBusquedaVentas.Designer.cs">
+      <DependentUpon>frmBusquedaVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clases\Clientes.cs" />
     <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Clases\Estados.cs" />
@@ -80,6 +86,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsBusquedaEstados.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsVentaDet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsVentaDet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsVentas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsVentas.xsd</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -100,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Busquedas\frmBusquedaProducto.resx">
       <DependentUpon>frmBusquedaProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Busquedas\frmBusquedaVentas.resx">
+      <DependentUpon>frmBusquedaVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -123,6 +142,28 @@
     </None>
     <None Include="dsBusquedaEstados.xss">
       <DependentUpon>dsBusquedaEstados.xsd</DependentUpon>
+    </None>
+    <None Include="dsVentaDet.xsc">
+      <DependentUpon>dsVentaDet.xsd</DependentUpon>
+    </None>
+    <None Include="dsVentaDet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsVentaDet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsVentaDet.xss">
+      <DependentUpon>dsVentaDet.xsd</DependentUpon>
+    </None>
+    <None Include="dsVentas.xsc">
+      <DependentUpon>dsVentas.xsd</DependentUpon>
+    </None>
+    <None Include="dsVentas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsVentas.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsVentas.xss">
+      <DependentUpon>dsVentas.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

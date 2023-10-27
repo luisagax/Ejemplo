@@ -359,6 +359,7 @@
             this.btnBuscarVenta.Size = new System.Drawing.Size(44, 35);
             this.btnBuscarVenta.TabIndex = 28;
             this.btnBuscarVenta.UseVisualStyleBackColor = true;
+            this.btnBuscarVenta.Click += new System.EventHandler(this.btnBuscarVenta_Click);
             // 
             // spVentaDetTableAdapter
             // 

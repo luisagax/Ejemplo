@@ -144,5 +144,11 @@ namespace CapadeUsuario.Catalogos
             x.Importe = decimal.Parse(txtTotal.Text);
             MessageBox.Show(x.guardar());
         }
+
+        private void btnBuscarVenta_Click(object sender, EventArgs e)
+        {
+            CapadeNegocio.Busquedas.frmBusquedaVentas x = new CapadeNegocio.Busquedas.frmBusquedaVentas(sConexion);
+            x.Show();
+        }
     }
 }

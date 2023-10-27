@@ -1,0 +1,12 @@
+create view vVentas
+as
+	select Folio, Importe,Fecha, 
+	case
+		when Estatus = 1 then 'Activo'
+		when Estatus = 0 then 'Inactivo'
+	end as EstatusVenta, idCliente, (select Nombre from vClientes vc where vc.id = v.idCliente) as Cliente from Venta v
+
+create view vVentaDet
+as
+	select vd.id, idVenta, Precio, Cantidad, Total, vd.idProducto, p.Nombre as Producto from VentaDet vd
+	inner join Productos p on p.id = vd.idProducto
