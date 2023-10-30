@@ -27,6 +27,7 @@ namespace CapadeUsuario.Catalogos
         {
             InitializeComponent();
             this.sConexion = sConexion;
+            this.spVentaDetTableAdapter.Connection.ConnectionString = sConexion;
         }
         void cargarconsecutivo()
         {
@@ -147,8 +148,15 @@ namespace CapadeUsuario.Catalogos
 
         private void btnBuscarVenta_Click(object sender, EventArgs e)
         {
-            CapadeNegocio.Busquedas.frmBusquedaVentas x = new CapadeNegocio.Busquedas.frmBusquedaVentas(sConexion);
-            x.Show();
+            CapadeNegocio.Clases.Ventas x = new Ventas(sConexion);
+            x.buscar();
+            lblEstatus.Text = x.Status;
+            txtFolio.Text = x.Folio.ToString();
+            txtTotal.Text = x.Importe.ToString();
+            txtIdCliente.Text = x.idCliente.ToString();
+            dtpFecha.Text = x.Fecha.ToString();
+            txtNombreCliente.Text = x.Cliente;
+            this.spVentaDetTableAdapter.Fill(this.dsVentaDet.spVentaDet, x.Folio);
         }
     }
 }

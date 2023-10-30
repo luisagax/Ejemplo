@@ -64,6 +64,7 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnBuscarVenta = new System.Windows.Forms.Button();
             this.spVentaDetTableAdapter = new CapadeUsuario.dsVentaDetTableAdapters.spVentaDetTableAdapter();
+            this.lblEstatus = new System.Windows.Forms.Label();
             this.barrademenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgVentaDetalles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spVentaDetBindingSource)).BeginInit();
@@ -365,11 +366,21 @@
             // 
             this.spVentaDetTableAdapter.ClearBeforeFill = true;
             // 
+            // lblEstatus
+            // 
+            this.lblEstatus.AutoSize = true;
+            this.lblEstatus.Location = new System.Drawing.Point(602, 9);
+            this.lblEstatus.Name = "lblEstatus";
+            this.lblEstatus.Size = new System.Drawing.Size(61, 18);
+            this.lblEstatus.TabIndex = 29;
+            this.lblEstatus.Text = "Estatus";
+            // 
             // frmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(667, 467);
+            this.Controls.Add(this.lblEstatus);
             this.Controls.Add(this.btnBuscarVenta);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.label6);
@@ -443,5 +454,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label lblEstatus;
     }
 }

@@ -19,7 +19,9 @@ namespace CapadeNegocio.Clases
         public decimal Importe;
         public DateTime Fecha;
         public byte Estatus;
+        public string Status;
         public int idCliente;
+        public string Cliente;
         public DataTable detalles;
 
         public Ventas()
@@ -62,5 +64,20 @@ namespace CapadeNegocio.Clases
             }
             return msj;
         }
+        public void buscar()
+        {
+            Busquedas.frmBusquedaVentas x = new Busquedas.frmBusquedaVentas(con.ConnectionString);
+            x.ShowDialog();
+            if(x.DialogResult == System.Windows.Forms.DialogResult.OK)
+            {
+                Folio = x.dsVentas.vVentas[x.vVentasBindingSource.Position].Folio;
+                Importe = x.dsVentas.vVentas[x.vVentasBindingSource.Position].Importe;
+                Fecha = x.dsVentas.vVentas[x.vVentasBindingSource.Position].Fecha;
+                Status = x.dsVentas.vVentas[x.vVentasBindingSource.Position].EstatusVenta;
+                idCliente = x.dsVentas.vVentas[x.vVentasBindingSource.Position].idCliente;
+                Cliente = x.dsVentas.vVentas[x.vVentasBindingSource.Position].Cliente;
+                detalles = x.dsVentaDet.vVentaDet;
+            }
+    }
     }
 }
