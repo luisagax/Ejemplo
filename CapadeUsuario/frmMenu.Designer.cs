@@ -70,7 +70,7 @@
             this.estadoToolStripMenuItem,
             this.municipioToolStripMenuItem});
             this.direccionesToolStripMenuItem.Name = "direccionesToolStripMenuItem";
-            this.direccionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.direccionesToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.direccionesToolStripMenuItem.Text = "Direcciones";
             // 
             // estadoToolStripMenuItem
@@ -107,7 +107,7 @@
             this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 26);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(32, 224);
+            this.toolStrip1.Size = new System.Drawing.Size(24, 224);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -117,7 +117,7 @@
             this.tsVentas.Image = ((System.Drawing.Image)(resources.GetObject("tsVentas.Image")));
             this.tsVentas.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsVentas.Name = "tsVentas";
-            this.tsVentas.Size = new System.Drawing.Size(29, 20);
+            this.tsVentas.Size = new System.Drawing.Size(21, 20);
             this.tsVentas.Text = "toolStripButton1";
             this.tsVentas.Click += new System.EventHandler(this.tsVentas_Click);
             // 
@@ -127,7 +127,7 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(29, 20);
+            this.toolStripButton1.Size = new System.Drawing.Size(21, 20);
             this.toolStripButton1.Text = "toolStripButton1";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -144,6 +144,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMenu";
             this.Text = "frmMenu";
+            this.Load += new System.EventHandler(this.frmMenu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);

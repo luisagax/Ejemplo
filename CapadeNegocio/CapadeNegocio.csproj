@@ -76,6 +76,12 @@
     <Compile Include="Busquedas\frmBusquedaVentas.Designer.cs">
       <DependentUpon>frmBusquedaVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Busquedas\frmBusquedaVentasCod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busquedas\frmBusquedaVentasCod.Designer.cs">
+      <DependentUpon>frmBusquedaVentasCod.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clases\Clientes.cs" />
     <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Clases\Estados.cs" />
@@ -119,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Busquedas\frmBusquedaVentas.resx">
       <DependentUpon>frmBusquedaVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Busquedas\frmBusquedaVentasCod.resx">
+      <DependentUpon>frmBusquedaVentasCod.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

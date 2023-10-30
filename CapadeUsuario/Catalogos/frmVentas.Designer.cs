@@ -65,6 +65,7 @@
             this.btnBuscarVenta = new System.Windows.Forms.Button();
             this.spVentaDetTableAdapter = new CapadeUsuario.dsVentaDetTableAdapters.spVentaDetTableAdapter();
             this.lblEstatus = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.barrademenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgVentaDetalles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spVentaDetBindingSource)).BeginInit();
@@ -375,11 +376,23 @@
             this.lblEstatus.TabIndex = 29;
             this.lblEstatus.Text = "Estatus";
             // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(173, 50);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(44, 35);
+            this.button1.TabIndex = 30;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(667, 467);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblEstatus);
             this.Controls.Add(this.btnBuscarVenta);
             this.Controls.Add(this.btnAgregar);
@@ -455,5 +468,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label lblEstatus;
+        private System.Windows.Forms.Button button1;
     }
 }

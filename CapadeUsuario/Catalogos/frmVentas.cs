@@ -1,4 +1,5 @@
-﻿using CapadeNegocio.Clases;
+﻿using CapadeNegocio.Busquedas;
+using CapadeNegocio.Clases;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -156,6 +157,15 @@ namespace CapadeUsuario.Catalogos
             txtIdCliente.Text = x.idCliente.ToString();
             dtpFecha.Text = x.Fecha.ToString();
             txtNombreCliente.Text = x.Cliente;
+            this.spVentaDetTableAdapter.Fill(this.dsVentaDet.spVentaDet, x.Folio);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CapadeNegocio.Clases.Ventas x = new Ventas(sConexion);
+            x.buscarcod();
+            txtFolio.Text = x.Folio.ToString();
+            
             this.spVentaDetTableAdapter.Fill(this.dsVentaDet.spVentaDet, x.Folio);
         }
     }

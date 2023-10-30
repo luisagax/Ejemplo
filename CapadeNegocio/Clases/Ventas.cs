@@ -78,6 +78,16 @@ namespace CapadeNegocio.Clases
                 Cliente = x.dsVentas.vVentas[x.vVentasBindingSource.Position].Cliente;
                 detalles = x.dsVentaDet.vVentaDet;
             }
-    }
+        }
+        public void buscarcod()
+        {
+            Busquedas.frmBusquedaVentasCod x = new Busquedas.frmBusquedaVentasCod(con.ConnectionString);
+            x.ShowDialog();
+            if (x.DialogResult == System.Windows.Forms.DialogResult.OK)
+            {
+                Folio = int.Parse(x.dgVentasCod.SelectedRows[0].Cells["Folio"].Value.ToString());
+                detalles = x.dtDet;
+            }
+        }
     }
 }
