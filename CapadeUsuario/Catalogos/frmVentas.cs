@@ -168,5 +168,11 @@ namespace CapadeUsuario.Catalogos
             
             this.spVentaDetTableAdapter.Fill(this.dsVentaDet.spVentaDet, x.Folio);
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            Reportes.frmRptMunicipio x = new Reportes.frmRptMunicipio(sConexion);
+            x.Show();
+        }
     }
 }

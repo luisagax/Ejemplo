@@ -1,0 +1,8 @@
+create procedure spRMunicipio
+@idEstado int
+as
+begin
+Select m.id, m.Nombre, e.Nombre as 'Estado' from Municipio m
+	inner join Estado e on e.id = m.idEstado
+	where m.idEstado = @idEstado
+end

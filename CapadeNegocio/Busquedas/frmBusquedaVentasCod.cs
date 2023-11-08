@@ -39,8 +39,7 @@ namespace CapadeNegocio.Busquedas
             if (dgVentasCod.Rows.Count != 0)
             {
                 string Folio = dgVentasCod.Rows[dgVentasCod.CurrentRow.Index].Cells["Folio"].Value.ToString();
-                con.Close();
-                //string Folio = dgVentasCod.SelectedRows[0].Cells["Folio"].Value.ToString();
+                con.Close();               
                 string query = "select * from vVentaDet where idVenta = " + Folio + "";
                 DataTable dt = new DataTable();
                 con.Open();
