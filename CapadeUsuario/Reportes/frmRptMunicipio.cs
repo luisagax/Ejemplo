@@ -1,4 +1,5 @@
 ﻿using CapadeNegocio.Clases;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,7 @@ namespace CapadeUsuario.Reportes
         static CapadeNegocio.Clases.Conexion x = new CapadeNegocio.Clases.Conexion();
         SqlConnection con = new SqlConnection(x.con());
         string sConexion = x.con();
+        int idEdo = 0;
         public frmRptMunicipio()
         {
             InitializeComponent();
@@ -30,12 +32,25 @@ namespace CapadeUsuario.Reportes
         }
         private void frmRptMunicipio_Load(object sender, EventArgs e)
         {
-
-            this.rptVMunicipio.RefreshReport();
+            rep();
         }
         void rep()
         {
-
+            if (idEdo == 0)
+                idEdo = 1;
+            else
+                idEdo = int.Parse(cbFiltroEstado.SelectedValue.ToString());
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter("spRMunicipio", sConexion);
+            da.SelectCommand.CommandType = CommandType.StoredProcedure;
+            da.SelectCommand.Parameters.Clear();
+            da.SelectCommand.Parameters.Add("@idEstado", idEdo);
+            da.Fill(dt);
+            this.rptVMunicipio.LocalReport.DataSources.Clear();
+            this.rptVMunicipio.LocalReport.ReportEmbeddedResource = "CapadeUsuario.Reportes.rptMunicipio.rdlc";
+            ReportDataSource r = new ReportDataSource("dsRMunicipio", dt);
+            this.rptVMunicipio.LocalReport.DataSources.Add(r);
+            this.rptVMunicipio.RefreshReport();
         }
         void cargarestados()
         {
@@ -45,6 +60,11 @@ namespace CapadeUsuario.Reportes
             cbFiltroEstado.DisplayMember = "Nombre";
             cbFiltroEstado.ValueMember = "id";
             cbFiltroEstado.DataSource = dt;
+        }
+
+        private void cbFiltroEstado_SelectedValueChanged(object sender, EventArgs e)
+        {
+           rep();
         }
     }
 }

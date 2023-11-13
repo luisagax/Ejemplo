@@ -46,5 +46,11 @@ namespace CapadeUsuario
         {
 
         }
+
+        private void municipioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Reportes.frmRptMunicipio x = new Reportes.frmRptMunicipio(sConexion);
+            x.Show();
+        }
     }
 }

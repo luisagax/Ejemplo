@@ -39,9 +39,11 @@
             this.cbFiltroEstado.Name = "cbFiltroEstado";
             this.cbFiltroEstado.Size = new System.Drawing.Size(256, 23);
             this.cbFiltroEstado.TabIndex = 0;
+            this.cbFiltroEstado.SelectedValueChanged += new System.EventHandler(this.cbFiltroEstado_SelectedValueChanged);
             // 
             // rptVMunicipio
             // 
+            this.rptVMunicipio.LocalReport.ReportEmbeddedResource = "CapadeUsuario.Reportes.rptMunicipio.rdlc";
             this.rptVMunicipio.Location = new System.Drawing.Point(12, 42);
             this.rptVMunicipio.Name = "rptVMunicipio";
             this.rptVMunicipio.ServerReport.BearerToken = null;

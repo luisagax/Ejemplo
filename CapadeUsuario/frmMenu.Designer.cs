@@ -39,6 +39,7 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsVentas = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.municipioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -95,6 +96,8 @@
             // 
             // informesToolStripMenuItem
             // 
+            this.informesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.municipioToolStripMenuItem1});
             this.informesToolStripMenuItem.Name = "informesToolStripMenuItem";
             this.informesToolStripMenuItem.Size = new System.Drawing.Size(85, 22);
             this.informesToolStripMenuItem.Text = "Informes";
@@ -131,6 +134,13 @@
             this.toolStripButton1.Text = "toolStripButton1";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
+            // municipioToolStripMenuItem1
+            // 
+            this.municipioToolStripMenuItem1.Name = "municipioToolStripMenuItem1";
+            this.municipioToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.municipioToolStripMenuItem1.Text = "Municipio";
+            this.municipioToolStripMenuItem1.Click += new System.EventHandler(this.municipioToolStripMenuItem1_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -166,5 +176,6 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton tsVentas;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripMenuItem municipioToolStripMenuItem1;
     }
 }
