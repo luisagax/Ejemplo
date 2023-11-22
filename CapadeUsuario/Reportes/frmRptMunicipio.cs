@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -65,6 +66,22 @@ namespace CapadeUsuario.Reportes
         private void cbFiltroEstado_SelectedValueChanged(object sender, EventArgs e)
         {
            rep();
+        }
+
+        public void SavePDF(ReportViewer viewer, string savePath)
+
+        {
+            byte[] Bytes = viewer.LocalReport.Render(format: "PDF", deviceInfo: "");
+
+            using (FileStream stream = new FileStream(savePath, FileMode.Create))
+            {
+                stream.Write(Bytes, 0, Bytes.Length);
+            }
+        }
+
+        private void btnPDF_Click(object sender, EventArgs e)
+        {
+           // SavePDF(rptVMunicipio, @"C:\PDF");
         }
     }
 }
